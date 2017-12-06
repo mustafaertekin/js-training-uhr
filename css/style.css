@@ -1,0 +1,25 @@
+.main {
+    margin: 100px;
+    border: 1px solid black;
+    background-color: lightgray;
+    width: 500px;
+    height: 300px;
+    padding: 50px;
+}
+
+input {
+    height: 30px;
+    width: 300px;
+    font-family: Courier New, Courier, monospace;
+    font-size: 20px;
+    border: 1px solid gray;
+    margin: 10px 0px;
+    box-shadow: 3px 2px 6px 4px #999;
+}
+
+output {
+    display: block;
+    width: 100%;
+    border: 1px dashed gray;
+    height: 50px;
+}
