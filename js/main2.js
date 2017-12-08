@@ -93,7 +93,7 @@ function dayLight (pValue, pValueHour) {
     if (+pValueHour == 0 || pValue.includes("am")) {    // burada < +pValueHour == 0 > ko$ulu, "00:15 pm" verildigi durumda am Abend degil de am Morgen yazilmasini saglar. 
         return "am Morgen"
     }
-    if (+pValueHour == 0 || pValue.includes("pm")) {    // burada < +pValueHour == 12 > ko$ulu, "12:15 am" verildigi durumda am Morgen degil de am Abend yazilmasini saglar.
+    if (+pValueHour == 12 || pValue.includes("pm")) {    // burada < +pValueHour == 12 > ko$ulu, "12:15 am" verildigi durumda am Morgen degil de am Abend yazilmasini saglar.
         return "am Abend";
     } else {
         $("#result2").html(`Lütfen "AM" veya "PM" degerini düzgün giriniz!`);
