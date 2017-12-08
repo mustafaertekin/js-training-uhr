@@ -68,7 +68,7 @@ let numbers = [
     {text: "vierundzwanzig", value:24},
     {text: "fünfundzwanzig", value:25},
     {text: "sechsundzwanzig", value:26},
-    {text: "siebendzwanzig", value:27},
+    {text: "siebenundzwanzig", value:27},
     {text: "achtundzwanzig", value:28},
     {text: "neunundzwanzig", value:29},
 
