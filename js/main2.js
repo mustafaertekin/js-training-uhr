@@ -70,8 +70,8 @@ function getValue2() {
 
 function validate2(pValue) {
     // teyit et
-    if (/^((0?[0-9]{1})|(1{1}[0-2]{1}))((:[0-5][0-9])?)\s(AM|PM|am|pm|Am|Pm)$/.test(pValue) == true || 
-        /^((0?[0-9]{1})|(1{1}[0-2]{1}))((:[0-5][0-9])?)\s(AM|PM|am|pm|Am|Pm)$/.test(pValue) == true) {
+    if (/^((0?[0-9]{1})|(1{1}[0-2]{1}))((:[0-5][0-9])?)\s(AM|PM|am|pm|Am|Pm)$/.test(pValue) == true ||   //  03:05 pm formati icin regex
+        /^((0?[0-9]{1})|(1{1}[0-2]{1}))((:[0-5][0-9])?)\s(AM|PM|am|pm|Am|Pm)$/.test(pValue) == true) {   //  03:05pm formati icin regex
             return true;
     } else {
         $("#result2").html(`
