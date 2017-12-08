@@ -84,6 +84,25 @@ function validate2(pValue) {
     }
 }
 
+// kendisine gelene bakar;
+// eger icinde "am" iceriyorsa "am Morgen"
+// eger icinde "pm" iceriyorsa "am Abend"  dondurur.
+// else -> ERROR
+
+function dayLight (pValue, pValueHour) {
+    if (+pValueHour == 0 || pValue.includes("am")) {    // burada < +pValueHour == 0 > ko$ulu, "00:15 pm" verildigi durumda am Abend degil de am Morgen yazilmasini saglar. 
+        return "am Morgen"
+    }
+    if (+pValueHour == 0 || pValue.includes("pm")) {    // burada < +pValueHour == 12 > ko$ulu, "12:15 am" verildigi durumda am Morgen degil de am Abend yazilmasini saglar.
+        return "am Abend";
+    } else {
+        $("#result2").html(`Lütfen "AM" veya "PM" degerini düzgün giriniz!`);
+        throw new Error(`Lütfen sadece "AM" veya "PM" giriniz!`);
+    }
+
+}
+
+
 /**
  * Parse rules
  * 4.1) "05:15": ikinci deger 15 ise "viertel nach fünf"
@@ -101,9 +120,6 @@ function parseValue2(pValue) {
     let valueHour = pValue.split(":")[0];
     let amOrPm = dayLight (pValue.split(":")[1].split(" ")[1].toLowerCase(), valueHour);  // 02:35 pm -> icinden "pm" kismini cekip alir. ve bunu dayLight fonksiyonuna gonderir.
     
-
-    console.log(valueMinute)
-    console.log(valueHour, valueMinute);
     // 5:10 veya 5:26 veya 5:47  benzeri icin; result: "zehn nach fünf" olacak sekilde:
     if (["15", "30", "45", "00"].some(key => valueMinute.includes(key)) == false) {  // valueMinute (dakika) 15,30,45 degilse:
         
@@ -152,19 +168,5 @@ function showResult2(pResult) {
     $("#result2").html(pResult);
 }
 
-// kendisine gelene bakar;
-// eger icinde "am" iceriyorsa "am Morgen"
-// eger icinde "pm" iceriyorsa "am Abend"  dondurur.
-// else -> ERROR
-function dayLight (pValue, pValueHour) {
-    if (+pValueHour == 0 || pValue.includes("am")) {    // burada < +pValueHour == 0 > ko$ulu, "00:15 pm" verildigi durumda am Abend degil de am Morgen yazilmasini saglar. 
-        return "am Morgen"
-    }
-    if (pValue.includes("pm")) {
-        return "am Abend";
-    } else {
-        $("#result2").html(`Lütfen "AM" veya "PM" degerini düzgün giriniz!`);
-        throw new Error(`Lütfen sadece "AM" veya "PM" giriniz!`);
-    }
 
-}
+
