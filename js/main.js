@@ -41,6 +41,7 @@ $("#button1").on("click", function(){
 
 let keywords = ["halb", "viertel", "nach", "vor", "uhr"];
 let numbers = [
+    {text: "null", value:0},    
     {text: "eins", value:1},
     {text: "zwei", value:2},
     {text: "drei", value:3},
@@ -64,6 +65,12 @@ let numbers = [
     {text: "einundzwanzig", value:21},
     {text: "zweiundzwanzig", value:22},
     {text: "dreiundzwanzig", value:23},
+    {text: "vierundzwanzig", value:24},
+    {text: "fünfundzwanzig", value:25},
+    {text: "sechsundzwanzig", value:26},
+    {text: "siebendzwanzig", value:27},
+    {text: "achtundzwanzig", value:28},
+    {text: "neunundzwanzig", value:29},
 
     {text: "halb", value:30, special: true},
     {text: "viertel", value:15, special: true},

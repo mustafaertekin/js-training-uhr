@@ -20,6 +20,6 @@ input {
 output {
     display: block;
     width: 100%;
-    border: 1px dashed gray;
     height: 50px;
+    font-size: 17px;
 }
